@@ -1,0 +1,54 @@
+.btn-select{
+    font-size: 24px;
+    margin: 20px;
+    padding: 20px;
+    line-height: 17px;
+}
+
+h1, h3{
+    text-align: center;
+}
+
+.house-block{
+    display: flex;
+    justify-content: center;
+}
+
+.select-block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.field{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+}
+
+.field-item{
+    margin: 10px;
+}
+
+.item-center{
+    font-size: 24px;
+}
+
+.active{
+    cursor: pointer;
+}
+
+.head-box{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.error{
+    color: red;
+}
+
+.success{
+    color: green;
+}

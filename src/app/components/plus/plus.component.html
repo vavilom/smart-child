@@ -1,0 +1,46 @@
+<main role="main" class="container">
+  <div class="jumbotron">
+    <div>
+      <select [(ngModel)]="mainNumber" (ngModelChange)="newGame($event)" class="form-control">
+        <option selected value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div class="head-box">
+      <div>
+        <img *ngIf="currentState == states.question" src="../../assets/images/smiles/question.png">
+        <img *ngIf="currentState == states.error" src="../../assets/images/smiles/question.png">
+        <img *ngIf="currentState == states.success" src="../../assets/images/smiles/question.png">
+      </div>
+      <app-block value="{{mainNumber}}"></app-block>
+      <div>3</div>
+    </div>
+    <h3 class="error" *ngIf="messageError">Не правильно</h3>
+    <h3 class="success" *ngIf="messageSuccess">Правильно</h3>
+    <h1>Число {{mainNumber}} это:</h1>
+    <div class="container numbers-box">
+      <div class="field">
+        <div class="field-item">
+          <app-block value="{{numbers[currentIndex].value}}"></app-block>
+        </div>
+        <div class="field-item item-center">
+          <span>И</span>
+        </div>
+        <div class="field-item">
+          <app-block value="{{seletedNumber}}"></app-block>
+        </div>
+      </div>
+      <hr>
+      <div class="select-block">
+        <div 
+          (click)="setAnswer(num)" 
+          class="active" 
+          *ngFor="let num of helper.getRange(mainNumber)">
+          <app-block value="{{num}}"></app-block>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
